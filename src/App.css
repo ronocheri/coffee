@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+.moveLeft
+{
+  padding-left: 50px;
+
+}
+.centered {
+  display: flex;
+   align-Items: center;
+   justify-Content: center;
+   margin-Top:1px;
+}
+
+.centerImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table{
+  display: table;
+  vertical-align: middle;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
