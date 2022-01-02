@@ -244,7 +244,11 @@ function Members()
 {
   function senEmail(e)
   {
-
+    if(document.getElementById('mesToSend').value = '')
+    {
+      alert("Message can't be empty!")
+      return ;
+    }
     e.preventDefault();
 
     emailjs.sendForm('service_jwauyzq', 'template_ieqdkdk', e.target, 'user_nllkLZFaKkVGnxhq3sSru')
@@ -277,7 +281,7 @@ function Members()
                <input type="email" name="user_email" defaultValue={worker.email} hidden/>
 
                <div className="centered moveLeft">
-                <textarea type="text" name="message" defaultValue='Write a message...' style={{minHeight:"50px"}}/>
+                <textarea  id='mesToSend' type="text" name="message" placeholder='Write a message...' style={{minHeight:"50px"}}/>
                 <Button aria-label="email" type="submit">
                     <EmailIcon sx={{ fontSize: 35 }}/>
                   </Button>
