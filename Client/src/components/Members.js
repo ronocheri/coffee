@@ -236,6 +236,16 @@ const DUMMY_DATA = [
     description:
     'A Development team leader.',
     email:'OlgaM@iscar.co.il',
+  }, 
+  {
+    id: '23',
+    firstName: 'Tair',
+    lastName: 'Halfa',
+    image:'assets/tair.jpg',
+    team: 'ERP Applications',
+    description:
+    'ERP Programmer.',
+    email:'tairh@iscar.co.il',
   },
 ];
 
