@@ -4,12 +4,19 @@ import Select from 'react-select'
 import classes from '../style/NewspaperPage.module.css'
 import { Worker } from '@react-pdf-viewer/core';
 import axios from 'axios';
+import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/toolbar/lib/styles/index.css';
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 
 // Import the main component
 import { Viewer } from '@react-pdf-viewer/core';
-
-// Import the styles
+// Import styles
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
+
+// Create new plugin instance
 
 
 const serviceUrl="http://localhost:3000/issues";
@@ -20,7 +27,8 @@ function NewspaperPage()
 {
   
   let options=[]
-
+  
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const [selectedOption, set_selectedOption] = React.useState('1')
   const [pdfUrl, setPdfUrl] = React.useState("http://localhost:3000/assets/PDF_files/1.pdf")
 
@@ -77,7 +85,8 @@ fetchData(serviceUrl);
                   border: '1px solid rgba(0, 0, 0, 0.3)',
                   height: '750px',
               }}>
-              <Viewer fileUrl={pdfUrl} />
+               
+              <Viewer fileUrl={pdfUrl} plugins={[defaultLayoutPluginInstance]} />
           </div>
         </Worker>
           </div>
