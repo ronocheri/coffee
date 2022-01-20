@@ -3,6 +3,7 @@ import classes from '../style/MainNavigation.module.css'
 import HomeIcon from '@mui/icons-material/Home';
 import ArticleIcon from '@mui/icons-material/Article';
 import ContactsIcon from '@mui/icons-material/Contacts';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 
 function MainNavigation()
 {
@@ -13,6 +14,7 @@ function MainNavigation()
     <nav>
         <ul>
             <li ><Link to='/'><HomeIcon sx={{ fontSize: 40, color: "white" }}/>Home</Link></li>
+            <li ><Link to='/issues'><NewspaperIcon sx={{ fontSize: 40, color: "white" }}/>Issues</Link></li>
             <li ><Link to='/article'><ArticleIcon sx={{ fontSize: 40, color: "white" }}/>Article</Link></li>
             <li ><Link to='/members'><ContactsIcon sx={{ fontSize: 40, color: "white" }}/>Members</Link></li>
         </ul>

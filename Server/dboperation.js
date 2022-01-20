@@ -11,6 +11,16 @@ console.log(" mathus-error :" + error);
   }
 }
  
+async function getIssues() {
+    try {
+        
+      let pool = await sql.connect(config);
+      let res = await pool.request().query("SELECT *  FROM NewspaperIssue");
+      return res.recordsets;
+    } catch (error) {
+      console.log(" mathus-error :" + error);
+    }
+  }
 
 async function getWorkers() {
     try {
@@ -40,5 +50,6 @@ async function getWorkers() {
 module.exports = {
   getdata: getdata,
   getWorkers:getWorkers,
-  getWorker:getWorker
+  getWorker:getWorker,
+  getIssues:getIssues
 };

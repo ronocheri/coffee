@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Footer from './components/Footer';
-import MainNavigation from './components/MainNavigation';
+import NewspaperPage from './components/NewspaperPage';
 import ArticlePage from './components/ArticlePage';
 import Members from './components/Members';
 
@@ -16,6 +16,9 @@ function App() {
     <Switch>
       <Route path='/' exact>
         <HomePage/>
+      </Route>
+      <Route path='/issues'>
+        <NewspaperPage/>
       </Route>
       <Route path='/article'>
         <ArticlePage/>

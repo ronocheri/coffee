@@ -27,6 +27,17 @@ router.get('/workers', function(req, res, next)
   //res.render('index',{title:'Express'})
 })
 
+//get all workers
+router.get('/issues', function(req, res, next)
+{
+  dboperations.getIssues().then(result=>
+    {
+        console.log(result)
+        res.json(result[0])
+    })
+  //res.render('index',{title:'Express'})
+})
+
 //get a specific worker
 router.get('/worker/:id', function(req, res, next)
 {
