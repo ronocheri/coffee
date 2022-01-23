@@ -4,19 +4,13 @@ import Select from 'react-select'
 import classes from '../style/NewspaperPage.module.css'
 import { Worker } from '@react-pdf-viewer/core';
 import axios from 'axios';
-import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-
-// Import the main component
 import { Viewer } from '@react-pdf-viewer/core';
+
 // Import styles
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
-
-// Create new plugin instance
 
 
 const serviceUrl="http://localhost:3000/issues";
@@ -28,9 +22,9 @@ function NewspaperPage()
   
   let options=[]
   
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+  const defaultLayoutPluginInstance = defaultLayoutPlugin(); // Create new plugin instance
   const [selectedOption, set_selectedOption] = React.useState('1')
-  const [pdfUrl, setPdfUrl] = React.useState("http://localhost:3000/assets/PDF_files/1.pdf")
+  const [pdfUrl, setPdfUrl] = React.useState(serverUrl+"/assets/PDF_files/1.pdf")
 
 
   function handleChange(_selectedOption) {
@@ -55,6 +49,7 @@ function NewspaperPage()
         {
           issuesData=data;
          
+          options.push({ value: issuesData[0].id, label: issuesData[0].id }) //in aim to show issue number 1
           for (let i = 0; i < issuesData.length; i++) 
           {
             options.push({ value: issuesData[i].id, label: issuesData[i].id })
