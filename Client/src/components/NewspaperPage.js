@@ -12,9 +12,11 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 
+// const serviceUrl="http://localhost:3000/issues";
+// const serverUrl="http://localhost:3000";
 
-const serviceUrl="http://localhost:3000/issues";
-const serverUrl="http://localhost:3000";
+const serviceUrl="http://cts02.iscar.com:83/coffeeServer/issues";
+const serverUrl="http://cts02.iscar.com:83/coffeeServer";
 let issuesData=[]
 
 function NewspaperPage()

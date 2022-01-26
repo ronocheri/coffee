@@ -13,7 +13,7 @@ const config = {
         enableArithAort: true,
         instancename:'SQLEXPRESS'
     },
-    //port:1433 
+    port:1433 
 };
 
 
