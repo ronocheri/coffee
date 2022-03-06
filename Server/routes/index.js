@@ -1,6 +1,7 @@
 const { request } = require('express');
 var express = require('express');
 var router = express.Router();
+var path = require('path'), fs=require('fs');
 
 const dboperations=require('../dboperation')
 
@@ -47,5 +48,35 @@ router.get('/worker/:id', function(req, res, next)
         res.json(result[0])
     })
 })
+
+
+router.get('/getPicturesOfEvent/:year', function(req, res, next)
+{
+  fromDir(req.params.year,'.html');
+
+function fromDir(year,filter){
+  var startPath="C:\\eit\\appserv\\eitdev\\rte\\eit\\coffee\\Server\\public\\assets\\Events\\"+year
+    //console.log('Starting from dir '+startPath+'/');
+
+    if (!fs.existsSync(startPath)){
+        console.log("no dir ",startPath);
+        res.json("no dir");
+    }
+
+    var files=fs.readdirSync(startPath);
+    var filesArray=[];
+
+    for(var i=0;i<files.length;i++){
+        var filename=path.join(startPath,files[i]);
+        var relativePath="assets\\Events\\"+year+"\\"+files[i]
+        const obj={key:i,val:relativePath};
+        //const obj={key:i,val:filename};
+        filesArray.push(obj)
+        console.log('-- found: ',relativePath);
+    };
+    res.json(filesArray);
+};
+})
+
 
 module.exports = router;

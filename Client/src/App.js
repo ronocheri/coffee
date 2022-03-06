@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import HomePage from './components/HomePage';
@@ -8,6 +7,8 @@ import ArticlePage from './components/ArticlePage';
 import Members from './components/Members';
 
 import Layout from './components/Layout';
+import Events from './components/Events';
+import EventYear from './components/EventYear';
 
 function App() {
   return (
@@ -22,10 +23,16 @@ function App() {
       </Route>
       <Route path='/article'>
         <ArticlePage/>
-      </Route>
+      </Route>      
+      <Route path='/events'>
+        <Events/>
+      </Route> 
       <Route path='/members'>
         <Members/>
       </Route> 
+      <Route path='/eventYear'>
+        <EventYear/>
+      </Route>    
     </Switch>
     <Footer/>
     </Layout>

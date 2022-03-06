@@ -1,6 +1,7 @@
 import { textAlign, width } from "@mui/system";
 import React from "react";
 import classes from '../style/Article.module.css'
+import SearchInput from "./SearchInput";
 function ArticlePage()
 {
     return(
@@ -15,7 +16,7 @@ function ArticlePage()
 Small to mid-sized manufacturers and existing SmarTeam customers with a need for product lifecycle management (PLM), multi-discipline or multi-site collaboration, sustainable innovation, business applications leveraging PLM data, enterprise-wide quality management, integrated project management, requirements management or advanced change and configuration management should consider 3DEXPERIENCE ENOVIA.</p> 
             </div>
           </div>
-         
+          {/* <SearchInput/> */}
         </div>
     );
 }
