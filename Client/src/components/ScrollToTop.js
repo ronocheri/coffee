@@ -1,10 +1,11 @@
 import { useEffect,useState } from "react";
-import classes from '../style/MainNavigation.module.css'
 import IconButton from '@material-ui/core/IconButton';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import {makeStyles} from '@material-ui/core/styles';
 
-import {BiArrowFromBottom} from 'react-icons/bi';
+import {BsFillArrowUpCircleFill} from 'react-icons/bs';
+
+import {ImCircleUp} from 'react-icons/im';
 
 
 const useStyles=makeStyles((theme)=>
@@ -14,10 +15,12 @@ const useStyles=makeStyles((theme)=>
             zIndex:2,
             position:'fixed',
             bottom: '2vh',
-            background: '#5c8ce6',
-            color: "black",
+            fontSize:'5vh',
+            color:'#5c8ce6',
+            //background: '#5c8ce6',
             right: "5%"          
-        } }
+        } 
+    }
 ))
 
 function ScrollToTop()
@@ -51,11 +54,12 @@ useEffect(()=>
 },[])
 
     return (
-    <div className="">
+    <div>
         {isVisible &&
-        <IconButton  onClick={scrollToTop} className={classes.toTop}>
-            <ExpandLessIcon/>
-        </IconButton>
+        // <IconButton  onClick={scrollToTop} className={classes.toTop} >
+        //     <ExpandLessIcon/>
+        // </IconButton>
+        <ImCircleUp style={{cursor:"pointer"}} onClick={scrollToTop} className={classes.toTop}></ImCircleUp>
         }
     </div>
     )

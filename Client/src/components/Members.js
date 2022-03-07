@@ -82,7 +82,7 @@ fetchData(url);
         <div >
         <table id="workers" className={"table table-hover"}>
           <tbody>
-         
+         {/* <SearchInput data={DUMMY_DATA} /> */}
           {DUMMY_DATA.map((worker)=>{
 
             return (
@@ -101,7 +101,7 @@ fetchData(url);
               <form onSubmit={senEmail}>    
                 <input type="email" name="user_email" defaultValue={worker.email} hidden/>
                 <div className="centered">
-                  <Button aria-label="email" type="submit">
+                  <Button aria-label="email" type="submit" >
                       <EmailIcon sx={{ fontSize: 35 }}/>
                     </Button>
                   </div>  
