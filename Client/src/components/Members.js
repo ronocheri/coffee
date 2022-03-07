@@ -7,6 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import SearchInput from "./SearchInput";
+import ScrollToTop from "./ScrollToTop";
 
 
 //const url="http://localhost:3000/workers";
@@ -113,6 +114,7 @@ fetchData(url);
       
         </tbody>
         </table>
+        <ScrollToTop/>
       </div>
         );
   }

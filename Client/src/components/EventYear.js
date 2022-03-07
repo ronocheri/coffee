@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import classes from '../style/Article.module.css'
 import SearchInput from "./SearchInput";
 import axios from 'axios';
+// export * from "./ScrollToTop";
+import ScrollToTop from "./ScrollToTop";
 
 let events = [];
 var DUMMY_DATA=[];
@@ -46,27 +48,6 @@ function EventYear(props)
         fetchPicturesData(url)
     }
 
-//     {DUMMY_DATA.map((pic)=>{
-
-//         return (
-//         <div>
-//           <h1 className={"centered"}> {year}</h1>
-//           <div  >
-
-//               <div className={classes.centeredCard}>
-             
-//                   <img key={pic.key} src={pic.val} alt="Avatar" className={"centerImg eventImg"} style={{width:'75%'}} />
-
-//                   {/* <img key={pic.key} src={process.env.PUBLIC_URL+ picture.team} alt="Avatar" className={"centerImg eventImg"} style={{width:'75%'}} /> */}
-//               </div>
-
-            
-//           </div>
-//         </div>
-//     );
-//  })
-// }
-
 return <div>
     {DUMMY_DATA.map((pic)=>{
         // console.log("process.env.PUBLIC_URL: "+process.env.PUBLIC_URL)
@@ -86,6 +67,7 @@ return <div>
     })}
 
      {/* <button onClick={fetchData()}>click</button> */}
+     <ScrollToTop/>
 </div>
 
  }
